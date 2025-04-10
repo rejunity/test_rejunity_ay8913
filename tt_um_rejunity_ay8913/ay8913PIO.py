@@ -12,7 +12,7 @@ from rp2 import PIO
 
 from ttboard.demoboard import DemoBoard, Pins
 
-import ttboard.logging as logging
+import ttboard.log as logging
 log = logging.getLogger(__name__)
 
 
