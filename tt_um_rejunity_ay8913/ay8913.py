@@ -33,8 +33,8 @@ class AY8913:
         self.latch_delay_clocks = 0
         
         # need speed
-        self._pin_bdir = self.tt.uio1.raw_pin 
-        self._pin_bc1 = self.tt.uio0.raw_pin 
+        self._pin_bdir = self.tt.pins.uio1.raw_pin  #self._pin_bdir = self.tt.uio1.raw_pin 
+        self._pin_bc1  = self.tt.pins.uio0.raw_pin  #self._pin_bc1 = self.tt.uio0.raw_pin 
         
         
         

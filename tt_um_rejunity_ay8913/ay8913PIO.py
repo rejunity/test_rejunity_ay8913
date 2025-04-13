@@ -76,12 +76,12 @@ class AY8913PIO:
         
         self.tt.bidir_byte = 0
         
-        # now hand over control of the tt.in* pins and the two first
+        # now hand over control of the tt.pins.in* pins and the two first
         # bidirs to the PIO state machine
         self.sm = rp2.StateMachine(0, ay8913writer, 
              freq=2000000,
-             out_base=tt.in0.raw_pin,
-             sideset_base=tt.uio0.raw_pin, in_base=tt.out0.raw_pin)
+             out_base=tt.pins.ui_in0.raw_pin, #out_base=tt.in0.raw_pin,
+             sideset_base=tt.pins.uio0.raw_pin, in_base=tt.pins.uo_out0.raw_pin) #sideset_base=tt.uio0.raw_pin, in_base=tt.out0.raw_pin)
         
         self.runPIO(True)
         
