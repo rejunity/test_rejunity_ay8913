@@ -19,9 +19,9 @@ The "psym" format is a derivative of YM files, such as those [found here](http:/
 To use the player, you can simply load your psym file onto the RP2040 fs and then do:
 
 ```
-import tt_um_rejunity_ay8913.play_psym as player
+import examples.tt_um_rejunity_ay8913.play_psym as player
 
-player.run('/path/to/file.psym')
+player.run('examples/sample/doubledragon.psym')
 
 ```
 
