@@ -67,7 +67,7 @@ class AY8913PIO:
             
         whenever you like.
     '''
-    def __init__(self, tt:DemoBoard):
+    def __init__(self, tt:DemoBoard, chip_frequency=2000000):
         self.tt = tt 
         
         # make sure our bidir is setup and the SEL bits are set to 0
@@ -79,7 +79,7 @@ class AY8913PIO:
         # now hand over control of the tt.pins.in* pins and the two first
         # bidirs to the PIO state machine
         self.sm = rp2.StateMachine(0, ay8913writer, 
-             freq=2000000,
+             freq=chip_frequency,
              out_base=tt.pins.ui_in0.raw_pin, #out_base=tt.in0.raw_pin,
              sideset_base=tt.pins.uio0.raw_pin, in_base=tt.pins.uo_out0.raw_pin) #sideset_base=tt.uio0.raw_pin, in_base=tt.out0.raw_pin)
         

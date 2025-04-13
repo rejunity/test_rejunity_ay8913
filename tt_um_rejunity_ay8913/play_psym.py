@@ -45,7 +45,7 @@ def play(file_to_play:str=DefaultFile):
         print(f"Could not open {file_to_play}!")
         return False 
     
-    chip = AY8913PIO(DemoBoard.get())
+    chip = AY8913PIO(DemoBoard.get(), reader.systemclock)
     return playLoop(reader, chip)
 
 
