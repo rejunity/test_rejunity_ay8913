@@ -42,7 +42,7 @@ To use the player, you can simply load your music file onto the RP2040 fs and th
 ```
 import examples.tt_um_rejunity_sn76489.play_binsn as player
 
-player.run('examples/sample/MISSION76496.binsn')
+player.run('examples/sample/mission76496.rawsn')
 
 ```
 
