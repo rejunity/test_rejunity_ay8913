@@ -1,0 +1,1 @@
+ mpremote mount music run mount_chips.py repl
