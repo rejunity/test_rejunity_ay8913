@@ -13,9 +13,9 @@ NOTE: this all assumes you're running a Tiny Tapeout 5 demoboard, with [the SDK]
 Installation basically involves copying over the `tt_um_rejunity_ay8913` and `tt_um_rejunity_sn76489` directories onto the micropython FS under `examples/`.
 
 ```
-mpremote cp sample/* :/examples/sample
-mpremote cp tt_um_rejunity_sn76489/* :/examples/tt_um_rejunity_sn76489
-mpremote cp tt_um_rejunity_ay8913/* :/examples/tt_um_rejunity_ay8913
+mpremote cp -r sample :/examples/
+mpremote cp -r tt_um_rejunity_sn76489 :/examples/
+mpremote cp -r tt_um_rejunity_ay8913 :/examples/
 ```
 
 ## Play tunes with AY8913
