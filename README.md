@@ -1,10 +1,13 @@
-# test_rejunity_ay8913
+# Play music with AY8913 and SN76489 replicas on Tiny Tapeout 05
 
-Test code for the [tt_um_rejunity_ay8913 project](https://tinytapeout.com/runs/tt05/tt_um_rejunity_ay8913) an implementation of the AY-3-8913 (a 3-voice programmable sound generator chip from General Instruments) on [Tiny Tapeout 05](https://tinytapeout.com/runs/tt05/tt_um_rejunity_ay8913), running on micropython on the RP2040.
+This is a testing code for AY-3-8913 and SN76489 implementations on [Tiny Tapeout 05](https://tinytapeout.com/runs/tt05), running on micropython on the RP2040.
 
-This will let you either play with the AY8913 interface directly or just call functions to play tunes.
+* [tt_um_rejunity_ay8913](https://tinytapeout.com/runs/tt05/tt_um_rejunity_ay8913) is an implementation of the AY-3-8913, a 3-voice programmable sound generator chip from General Instruments and
+* [tt_um_rejunity_sn76489](https://tinytapeout.com/runs/tt05/tt_um_rejunity_sn76489) is an impleentation of the SN76489, a 4-voice programmable sound generator chip from Texas Instruments
 
-NOTE: this all assumes you're running a TT demoboard, with [the SDK](https://github.com/TinyTapeout/tt-micropython-firmware/) and [micropython](https://www.micropython.org) installed.
+This will let you either play with the AY8913 / SN76489 interface directly or just call functions to play tunes.
+
+NOTE: this all assumes you're running a Tiny Tapeout 5 demoboard, with [the SDK](https://github.com/TinyTapeout/tt-micropython-firmware/) and [micropython](https://www.micropython.org) installed.
 
 ## Install
 Installation basically involves copying over the `tt_um_rejunity_ay8913` and `tt_um_rejunity_sn76489` directories onto the micropython FS under `examples/`.
@@ -15,7 +18,7 @@ mpremote cp tt_um_rejunity_sn76489/* :/examples/tt_um_rejunity_sn76489
 mpremote cp tt_um_rejunity_ay8913/* :/examples/tt_um_rejunity_ay8913
 ```
 
-## Play tunes
+## Play tunes with AY8913
 
 You'll need a file, such as that found in samples/ here, of the right format or to figure out how to get the register values to set for each time tick on your own.
 
@@ -29,6 +32,20 @@ import examples.tt_um_rejunity_ay8913.play_psym as player
 player.run('examples/sample/doubledragon.psym')
 
 ```
+
+## Play tunes with SN76489
+
+Similar to "psym" format, the "binsn" is a simplification of VGM files, such as those [found here](https://www.stairwaytohell.com/music/index.html?page=vgmarchive). Use [vgm-converter](https://github.com/simondotm/vgm-converter) that takes vgm and dumps out a file that's just an uncompressed sequence of register settings.
+
+To use the player, you can simply load your music file onto the RP2040 fs and then do:
+
+```
+import examples.tt_um_rejunity_sn76489.play_binsn as player
+
+player.run('examples/sample/MISSION76496.binsn')
+
+```
+
 
 ## Set registers manually
 
