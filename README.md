@@ -4,11 +4,16 @@ Test code for the [tt_um_rejunity_ay8913 project](https://tinytapeout.com/runs/t
 
 This will let you either play with the AY8913 interface directly or just call functions to play tunes.
 
-NOTE: this all assumes you're running a TT demoboard, with [the SDK](https://github.com/TinyTapeout/tt-micropython-firmware/) installed.
+NOTE: this all assumes you're running a TT demoboard, with [the SDK](https://github.com/TinyTapeout/tt-micropython-firmware/) and [micropython](https://www.micropython.org) installed.
 
-## 
-Installation basically involves copying over the `tt_um_rejunity_ay8913` directory onto the micropython FS under `examples/`.
+## Install
+Installation basically involves copying over the `tt_um_rejunity_ay8913` and `tt_um_rejunity_sn76489` directories onto the micropython FS under `examples/`.
 
+```
+mpremote cp sample/* :/examples/sample
+mpremote cp tt_um_rejunity_sn76489/* :/examples/tt_um_rejunity_sn76489
+mpremote cp tt_um_rejunity_ay8913/* :/examples/tt_um_rejunity_ay8913
+```
 
 ## Play tunes
 
