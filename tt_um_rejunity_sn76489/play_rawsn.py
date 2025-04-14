@@ -10,7 +10,7 @@ from ttboard.demoboard import DemoBoard
 import ttboard.log as logging
 log = logging.getLogger(__name__)
 
-from examples.tt_um_rejunity_sn76489.binsn_reader import RawSNReader
+from examples.tt_um_rejunity_sn76489.rawsn_reader import RawSNReader
 from examples.tt_um_rejunity_sn76489.sn76489 import SN76489
 from examples.tt_um_rejunity_sn76489.sn76489PIO import SN76489PIO
 from examples.tt_um_rejunity_sn76489.setup import setup
