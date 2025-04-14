@@ -46,6 +46,22 @@ player.run('examples/sample/mission76496.rawsn')
 
 ```
 
+## Play tunes from a mounted drive
+
+Not that many tunes can fit on a RP2040 filesystem directly. Instead you can mount the host drive. First, on a local machine run:
+```
+./mount_music.sh
+```
+
+Then from a REPL prompt:
+```
+ay.run('xenon.psym')
+CTRL^C
+ay.stop()
+sn.run('crazeerider.rawsn`)
+CTRL^C
+sn.stop()
+```
 
 ## Set registers manually
 
