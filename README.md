@@ -40,7 +40,7 @@ Similar to "psym" format, the "binsn" is a simplification of VGM files, such as 
 To use the player, you can simply load your music file onto the RP2040 fs and then do:
 
 ```
-import examples.tt_um_rejunity_sn76489.play_binsn as player
+import examples.tt_um_rejunity_sn76489.play_rawsn as player
 
 player.run('examples/sample/mission76496.rawsn')
 
