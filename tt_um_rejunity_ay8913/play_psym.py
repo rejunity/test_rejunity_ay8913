@@ -82,3 +82,6 @@ def playLoop(reader:PsYMReader, chip):
             time.sleep_ms(msToWait) 
     return True
     
+def stop():
+    chip = AY8913PIO(DemoBoard.get())
+    chip.reset() # clears the registers and sets the volume down 
