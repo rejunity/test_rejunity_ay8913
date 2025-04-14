@@ -10,18 +10,18 @@ from ttboard.demoboard import DemoBoard
 import ttboard.log as logging
 log = logging.getLogger(__name__)
 
-from examples.tt_um_rejunity_sn76489.binsn_reader import BinSNReader
+from examples.tt_um_rejunity_sn76489.binsn_reader import RawSNReader
 from examples.tt_um_rejunity_sn76489.sn76489 import SN76489
 from examples.tt_um_rejunity_sn76489.sn76489PIO import SN76489PIO
 from examples.tt_um_rejunity_sn76489.setup import setup
 import ttboard.util.time as time 
 
-DefaultFile = '/MISSION76496.snbin'
+DefaultFile = '/mission76496.rawsn'
 def runPurePython(file_to_play:str=DefaultFile):
     tt = DemoBoard.get()
     if not setup(tt):
         return False 
-    reader = BinSNReader()
+    reader = RawSNReader()
     if not reader.open(file_to_play):
         print(f"Could not open {file_to_play}!")
         return False 
@@ -40,7 +40,7 @@ def run(file_to_play:str=DefaultFile):
     
 def play(file_to_play:str=DefaultFile):
     
-    reader = BinSNReader()
+    reader = RawSNReader()
     if not reader.open(file_to_play):
         print(f"Could not open {file_to_play}!")
         return False 
@@ -49,10 +49,10 @@ def play(file_to_play:str=DefaultFile):
     return playLoop(reader, chip)
 
 
-def playLoopOO(reader:BinSNReader, chip):
+def playLoopOO(reader:RawSNReader, chip):
     return playLoop(reader, chip)
 
-def playLoop(reader:BinSNReader, chip):
+def playLoop(reader:RawSNReader, chip):
     delayMs = int(1000/reader.samplerateHz)
     while reader.samples_left:
         tnow = time.ticks_us()
