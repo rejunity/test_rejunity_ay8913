@@ -35,7 +35,7 @@ player.run('examples/sample/doubledragon.psym')
 
 ## Play tunes with SN76489
 
-Similar to "psym" format, the "binsn" is a simplification of VGM files, such as those [found here](https://www.stairwaytohell.com/music/index.html?page=vgmarchive). Use [vgm-converter](https://github.com/simondotm/vgm-converter) that takes vgm and dumps out a file that's just an uncompressed sequence of register settings.
+Similar to "psym" format, the "binsn" is a simplification of VGM files, such as those [found here](https://www.stairwaytohell.com/music/index.html?page=vgmarchive). Use [vgm-converter](https://github.com/rejunity/vgm-converter) that takes vgm and dumps out a file that's just an uncompressed sequence of register settings.
 
 To use the player, you can simply load your music file onto the RP2040 fs and then do:
 
